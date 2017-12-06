@@ -14,6 +14,7 @@ def a32_to_str(a):
 
 def aes_cbc_encrypt(data, key):
     encryptor = AES.new(key, AES.MODE_CBC, '\0' * 16)
+    # choice of CBC mode is justified on https://mega.nz/doc 12.10 "A chunk MAC is computed as follows (this is essentially CBC-MAC, which was chosen instead of the more efficient OCB over intellectual property concerns)"
     # the last argument, the initiatlisation vector is optional http://pythonhosted.org/pycrypto/Crypto.Cipher.AES-module.html#new
     return encryptor.encrypt(data)
     # length data must be a multiple of 16 http://pythonhosted.org/pycrypto/Crypto.Cipher.blockalgo.BlockAlgo-class.html#encrypt
