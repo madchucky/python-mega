@@ -8,6 +8,7 @@ from Crypto.Cipher import AES
 
 def a32_to_str(a):
     return struct.pack('>%dI' % len(a), *a)
+# > , my guess is that choosing the big-endian and not letting it be native is aiming at making the code independent of the platform, in other words independent of the endianness of the platform: to be checked with @juanriaza https://docs.python.org/3.6/library/struct.html?highlight=struct#byte-order-size-and-alignment
 # https://docs.python.org/2/tutorial/controlflow.html#unpacking-argument-lists just to explain the use of '*' in front of 'a'
 
 
