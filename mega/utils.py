@@ -7,7 +7,7 @@ from Crypto.Cipher import AES
 
 
 def a32_to_str(a):
-    return struct.pack('>%dI' % len(a), *a)
+    return struct.pack('>{}I'.format(len(a)), *a)
 
 
 def aes_cbc_encrypt(data, key):
