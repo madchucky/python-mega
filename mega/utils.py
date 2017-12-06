@@ -14,7 +14,9 @@ def a32_to_str(a):
 
 def aes_cbc_encrypt(data, key):
     encryptor = AES.new(key, AES.MODE_CBC, '\0' * 16)
+    # the last argument, the initiatlisation vector is optional http://pythonhosted.org/pycrypto/Crypto.Cipher.AES-module.html#new
     return encryptor.encrypt(data)
+    # length data must be a multiple of 16 http://pythonhosted.org/pycrypto/Crypto.Cipher.blockalgo.BlockAlgo-class.html#encrypt
 
 
 def aes_cbc_encrypt_a32(data, key):
