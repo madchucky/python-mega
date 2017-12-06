@@ -8,6 +8,7 @@ from Crypto.Cipher import AES
 
 def a32_to_str(a):
     return struct.pack('>%dI' % len(a), *a)
+# https://docs.python.org/2/tutorial/controlflow.html#unpacking-argument-lists just to explain the use of '*' in front of 'a'
 
 
 def aes_cbc_encrypt(data, key):
