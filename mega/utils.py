@@ -32,7 +32,7 @@ def str_to_a32(b):
 
 def mpi2int(s):
     return int(binascii.hexlify(s[2:]), 16)
-# returns the string s, truncated of its 2 first caracters as an integer
+# returns the string s, truncated of its 2 first caracters as an integer https://docs.python.org/3.6/library/functions.html?highlight=int#int
 
 
 def aes_cbc_decrypt(data, key):
