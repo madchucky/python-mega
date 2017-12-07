@@ -25,7 +25,7 @@ def aes_cbc_encrypt_a32(data, key):
 
 
 def str_to_a32(b):
-    if len(b) % 4:  # Add padding, we need a string with a length multiple of 4
+    if len(b) % 4:  # Add padding, we need a string with a length multiple of 4 because the size of an unsigned integer as indicated in the call of the unpack method below is 4 bytes https://docs.python.org/3.6/library/struct.html#format-characters
         b += '\0' * (4 - len(b) % 4)
     return struct.unpack('>%dI' % (len(b) / 4), b)
 
